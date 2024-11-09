@@ -17,7 +17,6 @@ pub fn part_one(input: &str) -> Option<i32> {
         }
     }
 
-
     let mut red_values: Vec<i32> = Vec::new();
     let mut blue_values: Vec<i32> = Vec::new();
     let mut green_values: Vec<i32> = Vec::new();
@@ -125,7 +124,6 @@ pub fn part_two(input: &str) -> Option<i32> {
             games.insert(String::from(game_id), ls_.parse().unwrap());
         }
     }
-
 
     let mut red_values: Vec<i32> = Vec::new();
     let mut blue_values: Vec<i32> = Vec::new();
@@ -236,7 +234,9 @@ mod tests {
 
     #[test]
     fn test_part_two() {
-        let result = part_two(&advent_of_code::template::read_file_part("examples", DAY, 2));
+        let result = part_two(&advent_of_code::template::read_file_part(
+            "examples", DAY, 2,
+        ));
         assert_eq!(result, Some(2286));
     }
 }
