@@ -30,3 +30,6 @@ dhat-heap.json
 # Benchmarks
 
 data/timings.json
+/.idea/advent-of-code-rust-2023.iml
+/.idea/modules.xml
+/.idea/vcs.xml
