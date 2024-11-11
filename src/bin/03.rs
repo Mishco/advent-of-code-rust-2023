@@ -4,7 +4,6 @@ use itertools::Itertools;
 use regex::Regex;
 
 #[derive(Clone, PartialEq)]
-
 struct Point {
     x: usize,
     y: usize,
@@ -39,7 +38,6 @@ fn parse_part(location: (usize, usize), part_type: &char) -> Option<Part> {
     }
 }
 fn find_adjacent_points(point: &Point) -> Vec<Point> {
-    // For the part, calculate all it's adjacent coordinates
     let mut adjacent_points: Vec<Point> = vec![];
 
     // Loop around the point generating a vec
@@ -54,18 +52,14 @@ fn find_adjacent_points(point: &Point) -> Vec<Point> {
 }
 
 fn discover_numbers(part: &Part, grid: &Grid<char>) -> Vec<u32> {
-    // For the part, calculate all it's adjacent coordinates
     let adjacent_points = find_adjacent_points(&part.location);
 
-    // Regex matcher for numbers
     let re = Regex::new(r"\d+").unwrap();
     let mut matches: Vec<u32> = vec![];
 
     for x in (part.location.x - 1)..=part.location.x + 1 {
-        // build string from the grid
         let row = grid.iter_row(x).collect::<String>();
 
-        // Iterate through the matches and attach them to the part
         for m in re.find_iter(&row) {
             let match_range = m.start()..m.end();
 
@@ -139,6 +133,6 @@ mod tests {
     #[test]
     fn test_part_two() {
         let result = part_two(&advent_of_code::template::read_file("examples", DAY));
-        assert_eq!(result, None);
+        assert_eq!(result, Some(467835));
     }
 }
