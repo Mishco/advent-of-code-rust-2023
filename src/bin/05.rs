@@ -129,7 +129,7 @@ pub fn part_one(input: &str) -> Option<u64> {
 
         (seeds, resource_mappings)
     }
-    let (seeds, resource_mappings) = map_resources(&input);
+    let (seeds, resource_mappings) = map_resources(input);
 
     // Maximum value for u64 -> 18446744073709551615
     let mut minimum_location: u64 = u64::MAX;
