@@ -7,7 +7,7 @@ pub fn part_one(input: &str) -> Option<i32> {
     // let mut all_games =  HashMap::new();
     let mut games: HashMap<String, String> = HashMap::new();
 
-    let ll = input.lines().into_iter();
+    let ll = input.lines();
     for line in ll {
         let split = line.split(":").collect::<Vec<&str>>();
         let game_id = split[0];
@@ -91,7 +91,7 @@ pub fn part_one(input: &str) -> Option<i32> {
             key, max_red, max_green, max_blue
         );
 
-        let mut power = max_red * max_green * max_blue;
+        let power = max_red * max_green * max_blue;
         total_power += power;
 
         if minimal_red >= max_red && minimal_green >= max_green && minimal_blue >= max_blue {
@@ -115,7 +115,7 @@ pub fn part_one(input: &str) -> Option<i32> {
 pub fn part_two(input: &str) -> Option<i32> {
     let mut games: HashMap<String, String> = HashMap::new();
 
-    let ll = input.lines().into_iter();
+    let ll = input.lines();
     for line in ll {
         let split = line.split(":").collect::<Vec<&str>>();
         let game_id = split[0];
@@ -199,7 +199,7 @@ pub fn part_two(input: &str) -> Option<i32> {
             key, max_red, max_green, max_blue
         );
 
-        let mut power = max_red * max_green * max_blue;
+        let power = max_red * max_green * max_blue;
         total_power += power;
 
         if minimal_red >= max_red && minimal_green >= max_green && minimal_blue >= max_blue {
