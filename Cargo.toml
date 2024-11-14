@@ -31,3 +31,7 @@ itertools = "0.13.0"
 regex = "1.11.1"
 
 # Solution dependencies
+atoi = "2.0"
+indicatif = "0.17.9"
+derive-new = {version="*", default-features = false}
+num = "0.4"

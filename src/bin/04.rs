@@ -64,11 +64,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     let len = counts.len() - 1;
 
     for (i, one_card) in all_cards.iter().enumerate() {
-        let j = if one_card > &len {
-            len
-        } else {
-            one_card + i
-        };
+        let j = if one_card > &len { len } else { one_card + i };
 
         for k in i + 1..j + 1 {
             counts[k] += counts[i];
